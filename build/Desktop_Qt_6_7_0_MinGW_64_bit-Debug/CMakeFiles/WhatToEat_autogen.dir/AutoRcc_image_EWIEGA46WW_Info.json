@@ -1,0 +1,26 @@
+{
+	"BUILD_DIR" : "C:/Users/DELL/Documents/WhatToEat/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/WhatToEat_autogen",
+	"CMAKE_BINARY_DIR" : "C:/Users/DELL/Documents/WhatToEat/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "C:/Users/DELL/Documents/WhatToEat/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug",
+	"CMAKE_CURRENT_SOURCE_DIR" : "C:/Users/DELL/Documents/WhatToEat",
+	"CMAKE_SOURCE_DIR" : "C:/Users/DELL/Documents/WhatToEat",
+	"INCLUDE_DIR" : "C:/Users/DELL/Documents/WhatToEat/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/WhatToEat_autogen/include",
+	"INPUTS" : 
+	[
+		"C:/Users/DELL/Documents/WhatToEat/background",
+		"C:/Users/DELL/Documents/WhatToEat/\u641c\u7d22\u6846",
+		"C:/Users/DELL/Documents/WhatToEat/\u7b80\u7ea6\u641c\u7d22\u6846",
+		"C:/Users/DELL/Documents/WhatToEat/background800x600",
+		"C:/Users/DELL/Documents/WhatToEat/\u641c\u7d22\u6309\u94ae"
+	],
+	"LOCK_FILE" : "C:/Users/DELL/Documents/WhatToEat/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/CMakeFiles/WhatToEat_autogen.dir/AutoRcc_image_EWIEGA46WW_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "--no-zstd", "-name", "image" ],
+	"OUTPUT_CHECKSUM" : "EWIEGA46WW",
+	"OUTPUT_NAME" : "qrc_image.cpp",
+	"RCC_EXECUTABLE" : "D:/Qt/6.7.0/mingw_64/./bin/rcc.exe",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "C:/Users/DELL/Documents/WhatToEat/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/CMakeFiles/WhatToEat_autogen.dir/AutoRcc_image_EWIEGA46WW_Used.txt",
+	"SOURCE" : "C:/Users/DELL/Documents/WhatToEat/image.qrc",
+	"VERBOSITY" : 0
+}
