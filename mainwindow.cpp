@@ -2,6 +2,8 @@
 #include <QGridLayout>
 #include <QPaintEvent>
 #include <QPainter>
+#include <QDebug>
+#include <QString>
 #include "./ui_mainwindow.h"
 
 MainWindow::MainWindow(QWidget *parent)
@@ -24,3 +26,11 @@ void MainWindow::paintEvent(QPaintEvent *) //画背景图
 }
 
 void MainWindow::on_scrollArea_customContextMenuRequested(const QPoint &pos) {}
+
+void MainWindow::on_priceSlider_valueChanged(int value)
+{
+    qDebug() << "price slider value changed to:" << value;
+    ui->priceBoundLabel->setText((std::to_string(value) + ("元以下")).c_str());
+    ui->priceBoundLabel->setAlignment(Qt::AlignCenter);
+}
+

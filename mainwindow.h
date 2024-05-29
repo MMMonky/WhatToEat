@@ -23,6 +23,8 @@ protected:
 private slots:
     void on_scrollArea_customContextMenuRequested(const QPoint &pos);
 
+    void on_priceSlider_valueChanged(int value);
+
 private:
     Ui::MainWindow *ui;
 };
