@@ -1,5 +1,5 @@
-C:/Users/DELL/Documents/WhatToEat/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/WhatToEat_autogen/EWIEGA46WW/moc_mainwindow.cpp: C:/Users/DELL/Documents/WhatToEat/mainwindow.h \
-  C:/Users/DELL/Documents/WhatToEat/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/WhatToEat_autogen/moc_predefs.h \
+D:/Qt/projects/WhatToEat2/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/WhatToEat_autogen/EWIEGA46WW/moc_mainwindow.cpp: D:/Qt/projects/WhatToEat2/mainwindow.h \
+  D:/Qt/projects/WhatToEat2/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/WhatToEat_autogen/moc_predefs.h \
   D:/Qt/6.7.0/mingw_64/include/QtCore/q20functional.h \
   D:/Qt/6.7.0/mingw_64/include/QtCore/q20memory.h \
   D:/Qt/6.7.0/mingw_64/include/QtCore/q20type_traits.h \

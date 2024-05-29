@@ -75,7 +75,7 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName("scrollAreaWidgetContents");
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 790, 700));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 798, 700));
         scrollAreaWidgetContents->setMinimumSize(QSize(0, 700));
         scrollAreaWidgetContents->setStyleSheet(QString::fromUtf8(""));
         search = new QPushButton(scrollAreaWidgetContents);
