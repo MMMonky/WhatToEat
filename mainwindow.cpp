@@ -1,5 +1,11 @@
 #include "mainwindow.h"
+#include <QGridLayout>
+#include <QPaintEvent>
+#include <QPainter>
+#include <QDebug>
+#include <QString>
 #include "./ui_mainwindow.h"
+<<<<<<< HEAD
 #include "Dish.h"
 #include "Config.h"
 #include<QWidget>
@@ -11,10 +17,12 @@
 #include <QHBoxLayout>
 #include <QPushButton>
 #include <QScrollArea>
+=======
+>>>>>>> d90ddd2554fdad8cb54e74b60d27b6e70fc48aa7
 
-MainWindow::MainWindow(QWidget *parent) :
-    QMainWindow(parent),
-    ui(new Ui::MainWindow)
+MainWindow::MainWindow(QWidget *parent)
+    : QMainWindow(parent)
+    , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
 
@@ -39,11 +47,12 @@ bool MainWindow::eventFilter(QObject *watched, QEvent *event) {
 
 void MainWindow::paintEvent(QPaintEvent *) //画背景图
 {
-    QPainter p(this);   //创建一个painter,指定窗口为画布
+    QPainter p(this); //创建一个painter,指定窗口为画布
 
     p.drawPixmap(this->rect(), QPixmap("://background"));   //画背景图
 }
 
+<<<<<<< HEAD
 void MainWindow::paintWidget()
 {
     //创建一个painter,指定窗口为scrollAreaWidgetContents
@@ -69,5 +78,14 @@ void MainWindow::on_search_clicked()
 {
     dishNum += 2;
     update();
+=======
+void MainWindow::on_scrollArea_customContextMenuRequested(const QPoint &pos) {}
+
+void MainWindow::on_priceSlider_valueChanged(int value)
+{
+    qDebug() << "price slider value changed to:" << value;
+    ui->priceBoundLabel->setText((std::to_string(value) + ("元以下")).c_str());
+    ui->priceBoundLabel->setAlignment(Qt::AlignCenter);
+>>>>>>> d90ddd2554fdad8cb54e74b60d27b6e70fc48aa7
 }
 

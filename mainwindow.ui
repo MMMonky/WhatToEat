@@ -158,13 +158,13 @@
        <string>依口味缩小范围</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_2">
+     <widget class="QLabel" name="priceBoundLabel">
       <property name="geometry">
        <rect>
-        <x>630</x>
+        <x>570</x>
         <y>150</y>
-        <width>31</width>
-        <height>16</height>
+        <width>151</width>
+        <height>20</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -174,7 +174,7 @@
        <enum>QFrame::Panel</enum>
       </property>
       <property name="text">
-       <string>价格</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;价格&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_1">

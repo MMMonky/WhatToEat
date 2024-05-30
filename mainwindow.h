@@ -28,6 +28,8 @@ protected:
 private slots:
     void on_search_clicked();
 
+    void on_priceSlider_valueChanged(int value);
+
 private:
     Ui::MainWindow *ui;
 };

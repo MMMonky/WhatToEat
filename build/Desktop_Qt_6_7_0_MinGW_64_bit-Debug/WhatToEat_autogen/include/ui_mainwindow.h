@@ -32,7 +32,7 @@ public:
     QCheckBox *flavor_yes;
     QCheckBox *flavor_no;
     QLabel *label_3;
-    QLabel *label_2;
+    QLabel *priceBoundLabel;
     QLabel *label_1;
     QSlider *priceSlider;
     QTextEdit *textEdit;
@@ -93,11 +93,11 @@ public:
         label_3->setLayoutDirection(Qt::LeftToRight);
         label_3->setStyleSheet(QString::fromUtf8(""));
         label_3->setFrameShape(QFrame::Panel);
-        label_2 = new QLabel(scrollAreaWidgetContents);
-        label_2->setObjectName("label_2");
-        label_2->setGeometry(QRect(630, 150, 31, 16));
-        label_2->setStyleSheet(QString::fromUtf8(""));
-        label_2->setFrameShape(QFrame::Panel);
+        priceBoundLabel = new QLabel(scrollAreaWidgetContents);
+        priceBoundLabel->setObjectName("priceBoundLabel");
+        priceBoundLabel->setGeometry(QRect(570, 150, 151, 20));
+        priceBoundLabel->setStyleSheet(QString::fromUtf8(""));
+        priceBoundLabel->setFrameShape(QFrame::Panel);
         label_1 = new QLabel(scrollAreaWidgetContents);
         label_1->setObjectName("label_1");
         label_1->setGeometry(QRect(600, 90, 91, 21));
@@ -143,7 +143,7 @@ public:
         flavor_yes->setText(QCoreApplication::translate("MainWindow", "  flavor", nullptr));
         flavor_no->setText(QString());
         label_3->setText(QCoreApplication::translate("MainWindow", "\344\276\235\345\217\243\345\221\263\347\274\251\345\260\217\350\214\203\345\233\264", nullptr));
-        label_2->setText(QCoreApplication::translate("MainWindow", "\344\273\267\346\240\274", nullptr));
+        priceBoundLabel->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p align=\"center\">\344\273\267\346\240\274</p></body></html>", nullptr));
         label_1->setText(QCoreApplication::translate("MainWindow", "\344\276\235\344\273\267\346\240\274\347\274\251\345\260\217\350\214\203\345\233\264", nullptr));
         search->setText(QCoreApplication::translate("MainWindow", "...", nullptr));
     } // retranslateUi
