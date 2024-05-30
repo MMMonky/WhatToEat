@@ -15,7 +15,6 @@
 #include <QtWidgets/QCheckBox>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
-#include <QtWidgets/QPushButton>
 #include <QtWidgets/QScrollArea>
 #include <QtWidgets/QSlider>
 #include <QtWidgets/QTextEdit>
@@ -37,7 +36,6 @@ public:
     QLabel *label_1;
     QSlider *priceSlider;
     QTextEdit *textEdit;
-    QPushButton *editDish;
     QToolButton *search;
 
     void setupUi(QMainWindow *MainWindow)
@@ -59,8 +57,11 @@ public:
         scrollArea = new QScrollArea(centralwidget);
         scrollArea->setObjectName("scrollArea");
         scrollArea->setGeometry(QRect(0, 0, 800, 601));
-        sizePolicy.setHeightForWidth(scrollArea->sizePolicy().hasHeightForWidth());
-        scrollArea->setSizePolicy(sizePolicy);
+        QSizePolicy sizePolicy1(QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Ignored);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(scrollArea->sizePolicy().hasHeightForWidth());
+        scrollArea->setSizePolicy(sizePolicy1);
         scrollArea->setMinimumSize(QSize(100, 10));
         scrollArea->setSizeIncrement(QSize(0, 0));
         scrollArea->setStyleSheet(QString::fromUtf8("background-color: rgba(255, 255, 255, 0);"));
@@ -69,13 +70,13 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName("scrollAreaWidgetContents");
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 790, 1000));
-        QSizePolicy sizePolicy1(QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Expanding);
-        sizePolicy1.setHorizontalStretch(0);
-        sizePolicy1.setVerticalStretch(100);
-        sizePolicy1.setHeightForWidth(scrollAreaWidgetContents->sizePolicy().hasHeightForWidth());
-        scrollAreaWidgetContents->setSizePolicy(sizePolicy1);
-        scrollAreaWidgetContents->setMinimumSize(QSize(0, 1000));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 800, 601));
+        QSizePolicy sizePolicy2(QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Expanding);
+        sizePolicy2.setHorizontalStretch(0);
+        sizePolicy2.setVerticalStretch(100);
+        sizePolicy2.setHeightForWidth(scrollAreaWidgetContents->sizePolicy().hasHeightForWidth());
+        scrollAreaWidgetContents->setSizePolicy(sizePolicy2);
+        scrollAreaWidgetContents->setMinimumSize(QSize(0, 600));
         scrollAreaWidgetContents->setStyleSheet(QString::fromUtf8(""));
         flavor_yes = new QCheckBox(scrollAreaWidgetContents);
         flavor_yes->setObjectName("flavor_yes");
@@ -121,10 +122,6 @@ public:
         textEdit->setStyleSheet(QString::fromUtf8("\n"
 "background-color: rgb(255, 255, 255);"));
         textEdit->setCursorWidth(10);
-        editDish = new QPushButton(scrollAreaWidgetContents);
-        editDish->setObjectName("editDish");
-        editDish->setGeometry(QRect(560, 40, 161, 41));
-        editDish->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
         search = new QToolButton(scrollAreaWidgetContents);
         search->setObjectName("search");
         search->setGeometry(QRect(440, 40, 101, 51));
@@ -148,7 +145,6 @@ public:
         label_3->setText(QCoreApplication::translate("MainWindow", "\344\276\235\345\217\243\345\221\263\347\274\251\345\260\217\350\214\203\345\233\264", nullptr));
         label_2->setText(QCoreApplication::translate("MainWindow", "\344\273\267\346\240\274", nullptr));
         label_1->setText(QCoreApplication::translate("MainWindow", "\344\276\235\344\273\267\346\240\274\347\274\251\345\260\217\350\214\203\345\233\264", nullptr));
-        editDish->setText(QCoreApplication::translate("MainWindow", "\347\274\226\350\276\221\350\217\234\345\223\201", nullptr));
         search->setText(QCoreApplication::translate("MainWindow", "...", nullptr));
     } // retranslateUi
 

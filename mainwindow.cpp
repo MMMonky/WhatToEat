@@ -1,10 +1,11 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
+#include "Dish.h"
+#include "Config.h"
 #include<QWidget>
 #include<QPaintEvent>
 #include<QPainter>
 #include<QGridLayout>
-#include<iostream>
 #include<QDebug>
 #define cout qDebug()
 #include <QHBoxLayout>
@@ -18,6 +19,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 
     ui->scrollAreaWidgetContents->installEventFilter(this);
+    ui->scrollArea->setWidgetResizable(true);   //使scrollerea可滚动
+    setCentralWidget(ui->scrollArea);
 }
 
 MainWindow::~MainWindow()
@@ -52,6 +55,10 @@ void MainWindow::paintWidget()
         // 在scrollAreaWidgetContents上绘制图片
         p1.drawPixmap(60, 100 + i * 70, 480, 60, QPixmap("://搜索框"));
     }
+
+    if(dishNum > 7){
+        ui->scrollAreaWidgetContents->setMinimumSize(0, 600 + (dishNum - 7) * 70);    //改变小widget的大小
+    }
 }
 
 void MainWindow::mousePressEvent(QMouseEvent *e){
@@ -61,7 +68,6 @@ void MainWindow::mousePressEvent(QMouseEvent *e){
 void MainWindow::on_search_clicked()
 {
     dishNum += 2;
-    paintWidget();
     update();
 }
 
