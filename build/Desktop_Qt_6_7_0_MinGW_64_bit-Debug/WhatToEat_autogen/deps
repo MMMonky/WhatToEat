@@ -1,21 +1,4 @@
 WhatToEat_autogen/timestamp: \
-<<<<<<< HEAD
-	C:/Users/DELL/Documents/WhatToEat/CMakeLists.txt \
-	C:/Users/DELL/Documents/WhatToEat/Config.h \
-	C:/Users/DELL/Documents/WhatToEat/Dish.h \
-	C:/Users/DELL/Documents/WhatToEat/DishData.h \
-	C:/Users/DELL/Documents/WhatToEat/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/.qtc/package-manager/auto-setup.cmake \
-	C:/Users/DELL/Documents/WhatToEat/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/CMakeFiles/3.27.7/CMakeCXXCompiler.cmake \
-	C:/Users/DELL/Documents/WhatToEat/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/CMakeFiles/3.27.7/CMakeRCCompiler.cmake \
-	C:/Users/DELL/Documents/WhatToEat/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/CMakeFiles/3.27.7/CMakeSystem.cmake \
-	C:/Users/DELL/Documents/WhatToEat/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/WhatToEat_autogen/moc_predefs.h \
-	C:/Users/DELL/Documents/WhatToEat/image.qrc \
-	C:/Users/DELL/Documents/WhatToEat/main.cpp \
-	C:/Users/DELL/Documents/WhatToEat/mainwindow.cpp \
-	C:/Users/DELL/Documents/WhatToEat/mainwindow.h \
-	C:/Users/DELL/Documents/WhatToEat/utils.h \
-=======
->>>>>>> d90ddd2554fdad8cb54e74b60d27b6e70fc48aa7
 	D:/Qt/6.7.0/mingw_64/include/QtCore/q20functional.h \
 	D:/Qt/6.7.0/mingw_64/include/QtCore/q20memory.h \
 	D:/Qt/6.7.0/mingw_64/include/QtCore/q20type_traits.h \
@@ -566,6 +549,10 @@ WhatToEat_autogen/timestamp: \
 	D:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/vadefs.h \
 	D:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wchar.h \
 	D:/Qt/projects/WhatToEat2/CMakeLists.txt \
+	D:/Qt/projects/WhatToEat2/Config.h \
+	D:/Qt/projects/WhatToEat2/Dish.h \
+	D:/Qt/projects/WhatToEat2/DishData.h \
+	D:/Qt/projects/WhatToEat2/DishDataLoader.h \
 	D:/Qt/projects/WhatToEat2/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/.qtc/package-manager/auto-setup.cmake \
 	D:/Qt/projects/WhatToEat2/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/CMakeFiles/3.27.7/CMakeCXXCompiler.cmake \
 	D:/Qt/projects/WhatToEat2/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/CMakeFiles/3.27.7/CMakeRCCompiler.cmake \
@@ -575,5 +562,6 @@ WhatToEat_autogen/timestamp: \
 	D:/Qt/projects/WhatToEat2/main.cpp \
 	D:/Qt/projects/WhatToEat2/mainwindow.cpp \
 	D:/Qt/projects/WhatToEat2/mainwindow.h \
+	D:/Qt/projects/WhatToEat2/utils.h \
 	D:/Qt/projects/WhatToEat2/mainwindow.ui \
 	D:/Qt/Tools/CMake_64/bin/cmake.exe

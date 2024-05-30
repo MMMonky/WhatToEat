@@ -14,8 +14,9 @@
 #include <QDebug>
 #include <algorithm>
 class DishData {
-    QList<Dish> dishes = {};
 public:
+    QList<Dish> dishes = {};
+
     DishData() {
         LoadDishData();
     }
@@ -109,8 +110,4 @@ public:
         dishes.removeAt(index);
     }
 
-    template<class CmpFunc>
-    void SortDish(CmpFunc func) {
-        sort(dishes.begin(), dishes.end(), func);
-    }
 };

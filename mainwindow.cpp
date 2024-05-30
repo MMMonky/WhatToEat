@@ -5,7 +5,7 @@
 #include <QDebug>
 #include <QString>
 #include "./ui_mainwindow.h"
-<<<<<<< HEAD
+
 #include "Dish.h"
 #include "Config.h"
 #include<QWidget>
@@ -13,12 +13,11 @@
 #include<QPainter>
 #include<QGridLayout>
 #include<QDebug>
-#define cout qDebug()
+
 #include <QHBoxLayout>
 #include <QPushButton>
 #include <QScrollArea>
-=======
->>>>>>> d90ddd2554fdad8cb54e74b60d27b6e70fc48aa7
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -52,7 +51,7 @@ void MainWindow::paintEvent(QPaintEvent *) //画背景图
     p.drawPixmap(this->rect(), QPixmap("://background"));   //画背景图
 }
 
-<<<<<<< HEAD
+
 void MainWindow::paintWidget()
 {
     //创建一个painter,指定窗口为scrollAreaWidgetContents
@@ -78,14 +77,20 @@ void MainWindow::on_search_clicked()
 {
     dishNum += 2;
     update();
-=======
-void MainWindow::on_scrollArea_customContextMenuRequested(const QPoint &pos) {}
+}
 
 void MainWindow::on_priceSlider_valueChanged(int value)
 {
     qDebug() << "price slider value changed to:" << value;
-    ui->priceBoundLabel->setText((std::to_string(value) + ("元以下")).c_str());
+    int Mprice = value == 100 ? value : value * 0.4;
+    if (Mprice < 100 and Mprice > 0) {
+        ui->priceBoundLabel->setText((std::to_string(Mprice) + ("元以下")).c_str());
+    } else if (Mprice == 100) {
+        ui->priceBoundLabel->setText("任意价格");
+    } else {
+        ui->priceBoundLabel->setText("0元购");
+    }
+
     ui->priceBoundLabel->setAlignment(Qt::AlignCenter);
->>>>>>> d90ddd2554fdad8cb54e74b60d27b6e70fc48aa7
 }
 

@@ -21,7 +21,7 @@ public:
     QString img_path = "";
 
     // 标签列表
-    vector<QString> labels = {};
+    QList<QString> labels = {};
 
     // 介绍
     QString description = "";
