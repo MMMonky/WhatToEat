@@ -75,13 +75,13 @@
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 64,
+				"line" : 67,
 				"parent" : 0
 			},
 			{
 				"command" : 5,
 				"file" : 1,
-				"line" : 47,
+				"line" : 50,
 				"parent" : 0
 			},
 			{
@@ -365,18 +365,18 @@
 				0,
 				1,
 				2,
-				8
+				11
 			]
 		}
 	],
 	"dependencies" : 
 	[
 		{
-			"id" : "WhatToEat_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
-		},
-		{
 			"backtrace" : 0,
 			"id" : "WhatToEat_autogen::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "WhatToEat_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
 		}
 	],
 	"id" : "WhatToEat::@6890427a1f51a3e7e1df",
@@ -489,7 +489,7 @@
 				0,
 				1,
 				2,
-				8
+				11
 			]
 		},
 		{
@@ -497,7 +497,10 @@
 			"sourceIndexes" : 
 			[
 				3,
-				6
+				6,
+				7,
+				8,
+				9
 			]
 		},
 		{
@@ -506,15 +509,15 @@
 			[
 				4,
 				5,
-				7
+				10
 			]
 		},
 		{
 			"name" : "CMake Rules",
 			"sourceIndexes" : 
 			[
-				9,
-				10
+				12,
+				13
 			]
 		}
 	],
@@ -553,6 +556,21 @@
 			"backtrace" : 4,
 			"path" : "image.qrc",
 			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"path" : "Config.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"path" : "Dish.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"path" : "DishData.h",
+			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 0,

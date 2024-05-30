@@ -13,13 +13,13 @@
 #include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QCheckBox>
-#include <QtWidgets/QGraphicsView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QScrollArea>
 #include <QtWidgets/QSlider>
 #include <QtWidgets/QTextEdit>
+#include <QtWidgets/QToolButton>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -30,7 +30,6 @@ public:
     QWidget *centralwidget;
     QScrollArea *scrollArea;
     QWidget *scrollAreaWidgetContents;
-    QPushButton *search;
     QCheckBox *flavor_yes;
     QCheckBox *flavor_no;
     QLabel *label_3;
@@ -38,13 +37,8 @@ public:
     QLabel *label_1;
     QSlider *priceSlider;
     QTextEdit *textEdit;
-    QWidget *widget;
-    QGraphicsView *graphicsView;
-    QLabel *label_4;
-    QPushButton *delete_2;
-    QWidget *widget_2;
     QPushButton *editDish;
-    QPushButton *newDish;
+    QToolButton *search;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -75,16 +69,14 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName("scrollAreaWidgetContents");
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 790, 700));
-        scrollAreaWidgetContents->setMinimumSize(QSize(0, 700));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 790, 1000));
+        QSizePolicy sizePolicy1(QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Expanding);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(100);
+        sizePolicy1.setHeightForWidth(scrollAreaWidgetContents->sizePolicy().hasHeightForWidth());
+        scrollAreaWidgetContents->setSizePolicy(sizePolicy1);
+        scrollAreaWidgetContents->setMinimumSize(QSize(0, 1000));
         scrollAreaWidgetContents->setStyleSheet(QString::fromUtf8(""));
-        search = new QPushButton(scrollAreaWidgetContents);
-        search->setObjectName("search");
-        search->setGeometry(QRect(440, 40, 101, 51));
-        QIcon icon;
-        icon.addFile(QString::fromUtf8(":/\346\220\234\347\264\242\346\214\211\351\222\256"), QSize(), QIcon::Normal, QIcon::Off);
-        search->setIcon(icon);
-        search->setIconSize(QSize(100, 50));
         flavor_yes = new QCheckBox(scrollAreaWidgetContents);
         flavor_yes->setObjectName("flavor_yes");
         flavor_yes->setGeometry(QRect(600, 210, 71, 18));
@@ -97,6 +89,7 @@ public:
         label_3 = new QLabel(scrollAreaWidgetContents);
         label_3->setObjectName("label_3");
         label_3->setGeometry(QRect(600, 180, 91, 16));
+        label_3->setLayoutDirection(Qt::LeftToRight);
         label_3->setStyleSheet(QString::fromUtf8(""));
         label_3->setFrameShape(QFrame::Panel);
         label_2 = new QLabel(scrollAreaWidgetContents);
@@ -128,31 +121,17 @@ public:
         textEdit->setStyleSheet(QString::fromUtf8("\n"
 "background-color: rgb(255, 255, 255);"));
         textEdit->setCursorWidth(10);
-        widget = new QWidget(scrollAreaWidgetContents);
-        widget->setObjectName("widget");
-        widget->setGeometry(QRect(60, 170, 481, 61));
-        widget->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
-        graphicsView = new QGraphicsView(widget);
-        graphicsView->setObjectName("graphicsView");
-        graphicsView->setGeometry(QRect(0, 0, 71, 61));
-        label_4 = new QLabel(widget);
-        label_4->setObjectName("label_4");
-        label_4->setGeometry(QRect(90, 10, 81, 41));
-        delete_2 = new QPushButton(widget);
-        delete_2->setObjectName("delete_2");
-        delete_2->setGeometry(QRect(370, 20, 51, 21));
-        widget_2 = new QWidget(widget);
-        widget_2->setObjectName("widget_2");
-        widget_2->setGeometry(QRect(180, -20, 141, 101));
         editDish = new QPushButton(scrollAreaWidgetContents);
         editDish->setObjectName("editDish");
         editDish->setGeometry(QRect(560, 40, 161, 41));
         editDish->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
-        newDish = new QPushButton(scrollAreaWidgetContents);
-        newDish->setObjectName("newDish");
-        newDish->setGeometry(QRect(60, 100, 481, 61));
-        newDish->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
-        newDish->setIconSize(QSize(12, 12));
+        search = new QToolButton(scrollAreaWidgetContents);
+        search->setObjectName("search");
+        search->setGeometry(QRect(440, 40, 101, 51));
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/\346\220\234\347\264\242\346\214\211\351\222\256"), QSize(), QIcon::Normal, QIcon::Off);
+        search->setIcon(icon);
+        search->setIconSize(QSize(100, 50));
         scrollArea->setWidget(scrollAreaWidgetContents);
         MainWindow->setCentralWidget(centralwidget);
 
@@ -164,16 +143,13 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
-        search->setText(QString());
         flavor_yes->setText(QCoreApplication::translate("MainWindow", "  flavor", nullptr));
         flavor_no->setText(QString());
         label_3->setText(QCoreApplication::translate("MainWindow", "\344\276\235\345\217\243\345\221\263\347\274\251\345\260\217\350\214\203\345\233\264", nullptr));
         label_2->setText(QCoreApplication::translate("MainWindow", "\344\273\267\346\240\274", nullptr));
         label_1->setText(QCoreApplication::translate("MainWindow", "\344\276\235\344\273\267\346\240\274\347\274\251\345\260\217\350\214\203\345\233\264", nullptr));
-        label_4->setText(QCoreApplication::translate("MainWindow", "\350\217\234\345\223\201", nullptr));
-        delete_2->setText(QCoreApplication::translate("MainWindow", "\345\210\240\351\231\244", nullptr));
         editDish->setText(QCoreApplication::translate("MainWindow", "\347\274\226\350\276\221\350\217\234\345\223\201", nullptr));
-        newDish->setText(QCoreApplication::translate("MainWindow", "+\346\226\260\345\242\236", nullptr));
+        search->setText(QCoreApplication::translate("MainWindow", "...", nullptr));
     } // retranslateUi
 
 };

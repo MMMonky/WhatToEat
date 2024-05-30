@@ -7,7 +7,7 @@
 				{
 					"build" : ".",
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-.-Debug-3b04b2ed77efbeaf9880.json",
+					"jsonFile" : "directory-.-Debug-1fab68df6acff76cf998.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.16"
@@ -44,7 +44,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "WhatToEat::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-WhatToEat-Debug-89d0720b4bc6f1b3d82d.json",
+					"jsonFile" : "target-WhatToEat-Debug-e0354ccd0386a4df9277.json",
 					"name" : "WhatToEat",
 					"projectIndex" : 0
 				},

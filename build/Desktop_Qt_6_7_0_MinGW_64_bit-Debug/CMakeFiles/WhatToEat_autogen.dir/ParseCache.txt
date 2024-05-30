@@ -146,6 +146,7 @@ C:/Users/DELL/Documents/WhatToEat/mainwindow.h
  mdp:D:/Qt/6.7.0/mingw_64/include/QtGui/qwindowdefs.h
  mdp:D:/Qt/6.7.0/mingw_64/include/QtGui/qwindowdefs_win.h
  mdp:D:/Qt/6.7.0/mingw_64/include/QtWidgets/QMainWindow
+ mdp:D:/Qt/6.7.0/mingw_64/include/QtWidgets/QWidget
  mdp:D:/Qt/6.7.0/mingw_64/include/QtWidgets/qmainwindow.h
  mdp:D:/Qt/6.7.0/mingw_64/include/QtWidgets/qsizepolicy.h
  mdp:D:/Qt/6.7.0/mingw_64/include/QtWidgets/qtabwidget.h
@@ -353,5 +354,9 @@ C:/Users/DELL/Documents/WhatToEat/mainwindow.h
  mdp:D:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/vadefs.h
  mdp:D:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wchar.h
 C:/Users/DELL/Documents/WhatToEat/main.cpp
+C:/Users/DELL/Documents/WhatToEat/DishData.h
+C:/Users/DELL/Documents/WhatToEat/Dish.h
 C:/Users/DELL/Documents/WhatToEat/mainwindow.cpp
  uic:./ui_mainwindow.h
+C:/Users/DELL/Documents/WhatToEat/Config.h
+C:/Users/DELL/Documents/WhatToEat/utils.h
