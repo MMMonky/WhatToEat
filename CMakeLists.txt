@@ -30,6 +30,16 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         utils.h
         DishDataLoader.h
 
+
+
+        floatpan.h floatpan.cpp floatpan.ui
+        qmylabel.h qmylabel.cpp
+        dishui.h dishui.cpp dishui.ui
+        dishdetailui.h dishdetailui.cpp dishdetailui.ui
+
+
+
+
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET WhatToEat APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

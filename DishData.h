@@ -3,8 +3,8 @@
 
 #endif // DISHDATA_H
 
-#include "Dish.h"
 #include "Config.h"
+#include"utils.h"
 #include <vector>
 #include <QJsonDocument>
 #include <QJsonObject>
@@ -13,6 +13,9 @@
 #include <QDir>
 #include <QDebug>
 #include <algorithm>
+
+const QString DISH_DATA_PATH = "/Resources/DishData.json";
+
 class DishData {
 public:
     QList<Dish> dishes = {};
@@ -23,7 +26,7 @@ public:
 
     void LoadDishData() {
         QString path = QDir::currentPath();
-        QFile file(path + Config::DISH_DATA_PATH);
+        QFile file(path + DISH_DATA_PATH);
         if (not file.exists()) {
             qDebug() << "Dish Data Files not exist";
             return;
@@ -49,6 +52,7 @@ public:
         }
         QJsonArray arr = doc.array();
 
+        dishes.clear();
         for (auto d : arr) {
             if (d.isObject()) {
                 QJsonObject jsonObj = d.toObject();
@@ -70,7 +74,7 @@ public:
 
         QJsonDocument doc(arr);
         QString path = QDir::currentPath();
-        QFile file(path + Config::DISH_DATA_PATH);
+        QFile file(path + DISH_DATA_PATH);
         if (not file.exists()) {
             qDebug() << "Dish Data Files not exist";
             return;

@@ -1,7 +1,6 @@
 #ifndef DISH_H
 #define DISH_H
 
-#endif // DISH_H
 #include <vector>
 
 #include <QJsonObject>
@@ -38,9 +37,7 @@ public:
 
     }
 
-    Dish() {
-
-    }
+    Dish() {};
 
     QJsonObject toJson() {
         QJsonObject jsonObj;
@@ -66,3 +63,5 @@ public:
         return d1.name == name;
     }
 };
+
+#endif // DISH_H
