@@ -3,8 +3,8 @@
 
 #endif // DISHDATA_H
 
-#include "Dish.h"
 #include "Config.h"
+#include"utils.h"
 #include <vector>
 #include <QJsonDocument>
 #include <QJsonObject>
@@ -14,8 +14,9 @@
 #include <QDebug>
 #include <algorithm>
 class DishData {
-    QList<Dish> dishes = {};
 public:
+    QList<Dish> dishes = {};
+
     DishData() {
         LoadDishData();
     }
@@ -109,8 +110,4 @@ public:
         dishes.removeAt(index);
     }
 
-    template<class CmpFunc>
-    void SortDish(CmpFunc func) {
-        sort(dishes.begin(), dishes.end(), func);
-    }
 };

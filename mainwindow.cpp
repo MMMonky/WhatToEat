@@ -5,8 +5,6 @@
 #include <QDebug>
 #include <QString>
 #include "./ui_mainwindow.h"
-#include "Dish.h"
-#include "Config.h"
 #include<QWidget>
 #include<QPaintEvent>
 #include<QPainter>
@@ -38,7 +36,7 @@ MainWindow::~MainWindow()
 
 bool MainWindow::eventFilter(QObject *watched, QEvent *event) {
     if (watched == ui->scrollAreaWidgetContents && event->type() == QEvent::Paint) {
-        paintWidget();
+        paintWidget(dishDataLoader.curDishes);
     }
 
     return QWidget::eventFilter(watched, event);
@@ -51,7 +49,7 @@ void MainWindow::paintEvent(QPaintEvent *) //画背景图
     p.drawPixmap(this->rect(), QPixmap("://background"));   //画背景图
 }
 
-void MainWindow::paintWidget()
+void MainWindow::paintWidget(QList<Dish> curDishes)
 {
     //创建一个painter,指定窗口为scrollAreaWidgetContents
     QPainter p1(ui->scrollAreaWidgetContents);
@@ -60,7 +58,8 @@ void MainWindow::paintWidget()
     for (int i = 0; i < dishNum; ++i) {
 
         // 在scrollAreaWidgetContents上绘制图片
-        p1.drawPixmap(60, 100 + i * 70, 480, 60, QPixmap("://搜索框"));
+        dishDataLoader.filt(filter, nameCmp);
+        p1.drawPixmap(60, 100 + i * 70, 480, 60, QPixmap(dishDataLoader.curDishes[i].img_path));
 
         /*QMyLabel *myLabel = new QMyLabel(ui->scrollAreaWidgetContents);
         myLabel->setFixedSize(480, 60);
@@ -86,18 +85,25 @@ void MainWindow::paintWidget()
 }
 
 void MainWindow::mousePressEvent(QMouseEvent *e){
-    cout << e->pos();
+    qDebug() << e->pos();
 }
 
 void MainWindow::on_search_clicked()
 {
-    dishNum += 2;
-    update();
+
 }
 
 void MainWindow::on_priceSlider_valueChanged(int value)
 {
     qDebug() << "price slider value changed to:" << value;
-    ui->priceBoundLabel->setText((std::to_string(value) + ("元以下")).c_str());
+    int Mprice = value == 100 ? value : value * 0.4;
+    if (Mprice < 100 and Mprice > 0) {
+        ui->priceBoundLabel->setText((std::to_string(Mprice) + ("元以下")).c_str());
+    } else if (Mprice == 100) {
+        ui->priceBoundLabel->setText("任意价格");
+    } else {
+        ui->priceBoundLabel->setText("0元购");
+    }
+
     ui->priceBoundLabel->setAlignment(Qt::AlignCenter);
 }

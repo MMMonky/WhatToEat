@@ -28,6 +28,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         Dish.h
         DishData.h
         utils.h
+        DishDataLoader.h
 
 
 

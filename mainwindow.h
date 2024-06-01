@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include<QWidget>
+#include "DishDataLoader.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -17,12 +18,15 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    int dishNum = 2;
+    int dishNum = 11;
+    DishData dishData;
+    DishDataLoader dishDataLoader;
+    Filter filter;
 
 protected:
     bool eventFilter(QObject *watched, QEvent *event);  //事件过滤器
     void paintEvent(QPaintEvent *); //画背景图
-    void paintWidget(); //画菜品
+    void paintWidget(QList<Dish> curDishes); //画菜品
     void mousePressEvent(QMouseEvent *e);   //鼠标点击事件
 
 private slots:
