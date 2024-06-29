@@ -36,6 +36,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         qmylabel.h qmylabel.cpp
         dishui.h dishui.cpp dishui.ui
         dishdetailui.h dishdetailui.cpp dishdetailui.ui
+        newdishui.h newdishui.cpp newdishui.ui
 
 
 

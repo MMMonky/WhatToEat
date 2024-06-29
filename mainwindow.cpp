@@ -1,22 +1,23 @@
 #include "mainwindow.h"
+#include <QDebug>
+#include <QDebug>
+#include <QGridLayout>
 #include <QGridLayout>
 #include <QPaintEvent>
+#include <QPaintEvent>
 #include <QPainter>
-#include <QDebug>
+#include <QPainter>
 #include <QString>
+#include <QWidget>
 #include "./ui_mainwindow.h"
-#include<QWidget>
-#include<QPaintEvent>
-#include<QPainter>
-#include<QGridLayout>
-#include<QDebug>
 #define cout qDebug()
 #include <QHBoxLayout>
 #include <QPushButton>
 #include <QScrollArea>
-#include"qmylabel.h"
-#include"floatpan.h"
 #include "dishui.h"
+#include "floatpan.h"
+#include "qmylabel.h"
+#include "newdishui.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -27,7 +28,7 @@ MainWindow::MainWindow(QWidget *parent)
     //ui->scrollAreaWidgetContents->installEventFilter(this);
     //ui->scrollArea->setWidgetResizable(true);   //使scrollerea可滚动
     //setCentralWidget(ui->scrollArea);
-    QVBoxLayout * layout = new QVBoxLayout();
+    QVBoxLayout *layout = new QVBoxLayout();
     layout->addWidget(&_dishDetailUI);
     ui->dishDetailUIContainer->setLayout(layout);
 }
@@ -37,10 +38,10 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-
-bool MainWindow::eventFilter(QObject *watched, QEvent *event) {
+bool MainWindow::eventFilter(QObject *watched, QEvent *event)
+{
     //if (watched == ui->scrollAreaWidgetContents && event->type() == QEvent::Paint) {
-        //paintWidget(dishDataLoader.curDishes);
+    //paintWidget(dishDataLoader.curDishes);
     //}
 
     //return QWidget::eventFilter(watched, event);
@@ -50,7 +51,7 @@ void MainWindow::paintEvent(QPaintEvent *) //画背景图
 {
     QPainter p(this); //创建一个painter,指定窗口为画布
 
-    p.drawPixmap(this->rect(), QPixmap("://background"));   //画背景图
+    p.drawPixmap(this->rect(), QPixmap("://background")); //画背景图
 }
 
 void MainWindow::paintWidget(QList<Dish> curDishes)
@@ -61,7 +62,6 @@ void MainWindow::paintWidget(QList<Dish> curDishes)
     // 添加若干张图片到布局中
     //dishDataLoader.filt(filter, nameCmp);
     for (int i = 0; i < dishDataLoader.curDishes.size(); ++i) {
-
         // 在scrollAreaWidgetContents上绘制图片
         //p1.drawPixmap(60, 100 + i * 70, 480, 60, QPixmap(QDir::currentPath() + dishDataLoader.curDishes[i].img_path));
         //qDebug() << QDir::currentPath() + dishDataLoader.curDishes[i].img_path;
@@ -84,17 +84,17 @@ void MainWindow::paintWidget(QList<Dish> curDishes)
     }
 
     //f(dishNum > 7){
-        //ui->scrollAreaWidgetContents->setMinimumSize(0, 600 + (dishNum - 7) * 70);    //改变小widget的大小
+    //ui->scrollAreaWidgetContents->setMinimumSize(0, 600 + (dishNum - 7) * 70);    //改变小widget的大小
     //}
 }
 
-void MainWindow::mousePressEvent(QMouseEvent *e){
+void MainWindow::mousePressEvent(QMouseEvent *e)
+{
     qDebug() << e->pos();
 }
 
 void MainWindow::on_search_clicked()
 {
-
     keyWord = ui->textEdit->toPlainText();
 
     updateDishUI();
@@ -117,8 +117,8 @@ void MainWindow::on_priceSlider_valueChanged(int value)
     updateDishUI();
 }
 
-void MainWindow::updateDishUI() {
-
+void MainWindow::updateDishUI()
+{
     // 先按条件过滤和排序菜品
 
     if (keyWord == "") {
@@ -130,26 +130,156 @@ void MainWindow::updateDishUI() {
     }
 
     // TODO: 绘制菜品
-    QVBoxLayout * vLayout = new QVBoxLayout();
+    QVBoxLayout *vLayout = new QVBoxLayout();
     //vLayout->size
-    QWidget * qwgt = new QWidget();
+    QWidget *qwgt = new QWidget();
     for (auto d : dishDataLoader.curDishes) {
-        DishUI * dishUI = new DishUI();
+        DishUI *dishUI = new DishUI(this);
         dishUI->update(d);
         vLayout->addWidget(dishUI);
         connect(dishUI, &DishUI::dishUIClicked, &_dishDetailUI, &dishDetailUI::update);
+        connect(dishUI, &DishUI::dishUIDelete, this, &MainWindow::rmv_dish);
     }
     qwgt->setLayout(vLayout);
     ui->dishScrollArea->setWidget(qwgt);
 }
 
-void MainWindow::on_matchLabel_changed(QString label) {
+void MainWindow::rmv_dish(Dish& d) {
+    dishDataLoader.removeDish(d);
+    updateDishUI();
+}
 
+void MainWindow::add_matchLabel(QString label)
+{
     // 避免重复
-    if (matchLabels.contains(label)) return;
+    if (matchLabels.contains(label))
+        return;
 
     matchLabels.append(label);
 
     updateDishUI();
+}
+
+void MainWindow::rmv_matchLabel(QString label)
+{
+    if (not matchLabels.contains(label))
+        return;
+
+    matchLabels.removeAll(label);
+
+    updateDishUI();
+}
+
+// 家园一层
+void MainWindow::on_flavor_yes_stateChanged(int arg1)
+{
+    QString lbl = "家园一层";
+    if (arg1 == 0) {
+        rmv_matchLabel(lbl);
+    } else {
+        add_matchLabel(lbl);
+    }
+}
+
+// 家园2层
+void MainWindow::on_checkBox_stateChanged(int arg1)
+{
+    QString lbl = "家园二层";
+    if (arg1 == 0) {
+        rmv_matchLabel(lbl);
+    } else {
+        add_matchLabel(lbl);
+    }
+}
+
+// jia 3
+void MainWindow::on_checkBox_2_stateChanged(int arg1)
+{
+    QString lbl = "家园三层";
+    if (arg1 == 0) {
+        rmv_matchLabel(lbl);
+    } else {
+        add_matchLabel(lbl);
+    }
+}
+
+// jia 4
+void MainWindow::on_flavor_no_stateChanged(int arg1)
+{
+    QString lbl = "家园四层";
+    if (arg1 == 0) {
+        rmv_matchLabel(lbl);
+    } else {
+        add_matchLabel(lbl);
+    }
+}
+
+// nong yuan 1f
+
+void MainWindow::on_flavor_no_2_stateChanged(int arg1)
+{
+    QString lbl = "农园一层";
+    if (arg1 == 0) {
+        rmv_matchLabel(lbl);
+    } else {
+        add_matchLabel(lbl);
+    }
+}
+
+void MainWindow::on_flavor_no_3_stateChanged(int arg1)
+{
+    QString lbl = "农园二层";
+    if (arg1 == 0) {
+        rmv_matchLabel(lbl);
+    } else {
+        add_matchLabel(lbl);
+    }
+}
+
+// 学一
+
+void MainWindow::on_flavor_yes_2_stateChanged(int arg1)
+{
+    QString lbl = "学一食堂";
+    if (arg1 == 0) {
+        rmv_matchLabel(lbl);
+    } else {
+        add_matchLabel(lbl);
+    }
+}
+
+// 学五
+
+void MainWindow::on_flavor_yes_3_stateChanged(int arg1)
+{
+    QString lbl = "学五食堂";
+    if (arg1 == 0) {
+        rmv_matchLabel(lbl);
+    } else {
+        add_matchLabel(lbl);
+    }
+}
+
+void MainWindow::add_dish(Dish& d) {
+    this->dishDataLoader.addDish(d);
+    qDebug() << "add dish" << d.name;
+    updateDishUI();
+}
+
+// add dish
+int MainWindow::show_add_dishUI() {
+
+    NewDishUI newDishUI(this);
+    connect(&newDishUI, &NewDishUI::dishAddComplete, this, &MainWindow::add_dish);
+    newDishUI.setWindowTitle("添加新菜品");
+    newDishUI.show();
+
+    return newDishUI.exec();
+}
+void MainWindow::on_pushButton_clicked()
+{
+    hide();
+    this->show_add_dishUI();
+    show();
 }
 

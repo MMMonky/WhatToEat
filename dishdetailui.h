@@ -17,7 +17,7 @@ public:
     ~dishDetailUI();
 
 public slots:
-    void update(Dish& d);
+    void update(Dish &d);
 
 private:
     Ui::dishDetailUI *ui;

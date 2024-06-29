@@ -1,8 +1,8 @@
 #ifndef QMYLABEL_H
 #define QMYLABEL_H
 
-#include <QObject>
 #include <QLabel>
+#include <QObject>
 
 class QMyLabel : public QLabel
 {
@@ -17,8 +17,8 @@ signals:
 public slots:
 
 private:
-    void enterEvent(QEvent * event);
-    void leaveEvent(QEvent * event);
+    void enterEvent(QEvent *event);
+    void leaveEvent(QEvent *event);
 };
 
 #endif // QMYLABEL_H

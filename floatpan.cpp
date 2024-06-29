@@ -1,9 +1,9 @@
 #include "floatpan.h"
 #include "ui_floatpan.h"
 
-floatpan::floatpan(QWidget *parent,QString text) :
-    QWidget(parent),
-    ui(new Ui::floatpan)
+floatpan::floatpan(QWidget *parent, QString text)
+    : QWidget(parent)
+    , ui(new Ui::floatpan)
 {
     ui->setupUi(this);
     ui->textEdit->setText(text);

@@ -321,7 +321,7 @@ background-color: rgb(255, 255, 255);</string>
       <x>70</x>
       <y>110</y>
       <width>511</width>
-      <height>281</height>
+      <height>301</height>
      </rect>
     </property>
     <property name="widgetResizable">
@@ -333,7 +333,7 @@ background-color: rgb(255, 255, 255);</string>
        <x>0</x>
        <y>0</y>
        <width>509</width>
-       <height>279</height>
+       <height>299</height>
       </rect>
      </property>
     </widget>
@@ -352,6 +352,22 @@ background-color: rgb(255, 255, 255);</string>
       <width>681</width>
       <height>361</height>
      </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>50</y>
+      <width>31</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 22pt &quot;Microsoft YaHei UI&quot;;</string>
+    </property>
+    <property name="text">
+     <string>+</string>
     </property>
    </widget>
   </widget>

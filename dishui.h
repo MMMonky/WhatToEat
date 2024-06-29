@@ -14,13 +14,16 @@ class DishUI : public QWidget
 public:
     explicit DishUI(QWidget *parent = nullptr);
     ~DishUI();
-    void update(Dish& d);
+    void update(Dish &d);
 
 signals:
-    void dishUIClicked(Dish& d);
+    void dishUIClicked(Dish &d);
+    void dishUIDelete(Dish& d);
 
 private slots:
     void on_pushButton_clicked();
+
+    void on_pushButton_2_clicked();
 
 private:
     Ui::DishUI *ui;

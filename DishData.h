@@ -3,29 +3,30 @@
 
 #endif // DISHDATA_H
 
-#include "Config.h"
-#include"utils.h"
-#include <vector>
+#include <QDebug>
+#include <QCoreApplication>
+#include <QFile>
+#include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>
-#include <QJsonArray>
-#include <QFile>
-#include <QDir>
-#include <QDebug>
+#include "Config.h"
+#include "utils.h"
 #include <algorithm>
+#include <vector>
 
 const QString DISH_DATA_PATH = "/Resources/DishData.json";
 
-class DishData {
+class DishData
+{
 public:
     QList<Dish> dishes = {};
 
-    DishData() {
-        LoadDishData();
-    }
+    DishData() { LoadDishData(); }
 
-    void LoadDishData() {
-        QString path = QDir::currentPath();
+    void LoadDishData()
+    {
+        QString path = QCoreApplication::applicationDirPath();
+
         QFile file(path + DISH_DATA_PATH);
         if (not file.exists()) {
             qDebug() << "Dish Data Files not exist";
@@ -66,14 +67,15 @@ public:
         qDebug() << "Data Load Compelete";
     }
 
-    void SaveDishData() {
+    void SaveDishData()
+    {
         QJsonArray arr = {};
         for (auto d : dishes) {
             arr.append(d.toJson());
         }
 
         QJsonDocument doc(arr);
-        QString path = QDir::currentPath();
+        QString path = QCoreApplication::applicationDirPath();
         QFile file(path + DISH_DATA_PATH);
         if (not file.exists()) {
             qDebug() << "Dish Data Files not exist";
@@ -90,28 +92,31 @@ public:
         qDebug() << "Data Save Compelete";
     }
 
-    void AddDish(Dish d) {
-
+    void AddDish(Dish d)
+    {
         // 防止重复
         if (dishes.contains(d)) {
             return;
         }
 
         dishes.push_back(d);
+        SaveDishData();
     }
 
-    void RemoveDish(QString name) {
+    void RemoveDish(QString name)
+    {
         Dish d;
         d.name = name;
         dishes.removeAll(d);
-
+        SaveDishData();
     }
 
-    void RemoveDish(int index) {
+    void RemoveDish(int index)
+    {
         if (index < 0 or index >= dishes.size()) {
             return;
         }
         dishes.removeAt(index);
+        SaveDishData();
     }
-
 };

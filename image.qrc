@@ -5,16 +5,5 @@
         <file>简约搜索框</file>
         <file>background</file>
         <file>background800x600</file>
-        <file>build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Resources/imgs/DaJiangJun.jpg</file>
-        <file>build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Resources/imgs/FeiYangBanFan.jpg</file>
-        <file>build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Resources/imgs/HaiTaiFan.jpg</file>
-        <file>build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Resources/imgs/HuangMenJi.jpg</file>
-        <file>build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Resources/imgs/JinTangFeiNiu.jpg</file>
-        <file>build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Resources/imgs/JinTangYuFen.jpg</file>
-        <file>build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Resources/imgs/JiPaiFan.jpg</file>
-        <file>build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Resources/imgs/TengJiaoYu.jpg</file>
-        <file>build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Resources/imgs/TieBanCai.jpg</file>
-        <file>build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Resources/imgs/TuDouNiuRou.jpg</file>
-        <file>build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Resources/imgs/YouPoMian.jpg</file>
     </qresource>
 </RCC>

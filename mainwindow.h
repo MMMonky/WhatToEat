@@ -1,11 +1,11 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QMainWindow>
-#include<QWidget>
-#include "DishDataLoader.h"
 #include <QList>
-#include  "dishdetailui.h"
+#include <QMainWindow>
+#include <QWidget>
+#include "DishDataLoader.h"
+#include "dishdetailui.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -27,20 +27,44 @@ public:
     QString keyWord; // 搜索关键字
 
 protected:
-    bool eventFilter(QObject *watched, QEvent *event);  //事件过滤器
-    void paintEvent(QPaintEvent *); //画背景图
-    void paintWidget(QList<Dish> curDishes); //画菜品
-    void mousePressEvent(QMouseEvent *e);   //鼠标点击事件
-    void updateDishUI(); // 更新DishUI
+    bool eventFilter(QObject *watched, QEvent *event); //事件过滤器
+    void paintEvent(QPaintEvent *);                    //画背景图
+    void paintWidget(QList<Dish> curDishes);           //画菜品
+    void mousePressEvent(QMouseEvent *e);              //鼠标点击事件
+    void updateDishUI();                               // 更新DishUI
+    int show_add_dishUI();
 
 private slots:
     void on_search_clicked();
 
     void on_priceSlider_valueChanged(int value);
 
-    void on_matchLabel_changed(QString label);
+    void add_matchLabel(QString label);
 
+    void rmv_matchLabel(QString label);
     //void on_unmatchLabel_changed(QString label);
+
+    void rmv_dish(Dish& d);
+
+    void add_dish(Dish& d);
+
+    void on_flavor_yes_stateChanged(int arg1);
+
+    void on_checkBox_stateChanged(int arg1);
+
+    void on_checkBox_2_stateChanged(int arg1);
+
+    void on_flavor_no_stateChanged(int arg1);
+
+    void on_flavor_no_2_stateChanged(int arg1);
+
+    void on_flavor_no_3_stateChanged(int arg1);
+
+    void on_flavor_yes_2_stateChanged(int arg1);
+
+    void on_flavor_yes_3_stateChanged(int arg1);
+
+    void on_pushButton_clicked();
 
 private:
     Ui::MainWindow *ui;

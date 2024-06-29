@@ -3,12 +3,13 @@
 
 #include <vector>
 
+#include <QJsonArray>
 #include <QJsonObject>
 #include <QJsonValue>
-#include <QJsonArray>
 using namespace std;
 
-class Dish {
+class Dish
+{
 public:
     // 菜品名称
     QString name = "";
@@ -25,7 +26,8 @@ public:
     // 介绍
     QString description = "";
 
-    Dish(QJsonObject& jsonObj) {
+    Dish(QJsonObject &jsonObj)
+    {
         this->name = jsonObj.value("name").toString();
         this->price = jsonObj.value("price").toDouble();
         this->img_path = jsonObj.value("img_path").toString();
@@ -34,12 +36,12 @@ public:
         for (auto element : tmpArr) {
             this->labels.push_back(element.toString());
         }
-
     }
 
-    Dish() {};
+    Dish(){};
 
-    QJsonObject toJson() {
+    QJsonObject toJson()
+    {
         QJsonObject jsonObj;
         jsonObj.insert("name", name);
         jsonObj.insert("price", price);
@@ -55,13 +57,9 @@ public:
         return jsonObj;
     }
 
-    friend bool operator==(const Dish & d1, const Dish & d2) {
-        return d1.name == d2.name;
-    }
+    friend bool operator==(const Dish &d1, const Dish &d2) { return d1.name == d2.name; }
 
-    friend bool operator==(const Dish & d1, const QString& name) {
-        return d1.name == name;
-    }
+    friend bool operator==(const Dish &d1, const QString &name) { return d1.name == name; }
 };
 
 #endif // DISH_H
