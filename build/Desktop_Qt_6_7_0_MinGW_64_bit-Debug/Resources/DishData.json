@@ -154,19 +154,20 @@
             "清淡",
             "健康",
             "大众饮品",
-            "解暑"
+            "解暑",
+            "不辣"
         ],
         "name": "水",
         "price": 0
     },
     {
         "description": "与实际预期的口感差别较大，需要配水才能下咽，没吃过的朋友们要注意了",
-        "img_path": "D:/Qt/projects/WhatToEat4/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Resources/Images/GaoShu.jpg",
+        "img_path": "/Resources/Images/GaoShu.jpg",
         "labels": [
             "口感较硬",
             "理科教学楼",
             "营养丰富",
-            "高级美食\n"
+            "高级美食"
         ],
         "name": "高等数学",
         "price": 85
